@@ -8,7 +8,9 @@ function App() {
     <div>
       <Header />
       <SearchBar />
-      <ResultSeacrh />
+      <main>
+        <ResultSeacrh />
+      </main>
     </div>
   );
 }
