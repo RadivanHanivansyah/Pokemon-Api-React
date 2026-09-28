@@ -1,22 +1,30 @@
 import React from "react";
 import { hasil, pokemonUrl } from "../api/PokemonApi.js";
 import { useState } from "react";
+import InfoPokemon from "./InfoPokemon.jsx";
 
 const ResultSeacrh = () => {
-  const [data, setData] = useState();
+  const [pokemonDetail, setPokemonDetail] = useState();
   return (
-    <div>
-      {hasil.map((item, index) => {
-        return (
-          <button
-            className="border"
-            onClick={() => pokemonUrl(item.url)}
-            key={index}
-          >
-            {item.name}
-          </button>
-        );
-      })}
+    <div className="flex">
+      <div>
+        {hasil.map((item, index) => {
+          return (
+            <button
+              className="border"
+              onClick={() =>
+                pokemonUrl(item.url).then((response) => {
+                  setPokemonDetail(response);
+                })
+              }
+              key={index}
+            >
+              {item.name}
+            </button>
+          );
+        })}
+      </div>
+      <InfoPokemon data={pokemonDetail} />
     </div>
   );
 };
