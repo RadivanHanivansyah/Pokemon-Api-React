@@ -5,7 +5,7 @@ import ResultSeacrh from "../Components/ResultSeacrh";
 import SearchBar from "../Components/SearchBar";
 function App() {
   return (
-    <div>
+    <div className="px-3 -mt-9 sm:-mt-12">
       <Header />
       <SearchBar />
       <main>

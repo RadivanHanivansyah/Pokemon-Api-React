@@ -5,6 +5,7 @@ import InfoPokemon from "./InfoPokemon.jsx";
 
 const ResultSeacrh = () => {
   const [pokemonDetail, setPokemonDetail] = useState();
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex">
       <div>
@@ -15,6 +16,7 @@ const ResultSeacrh = () => {
               onClick={() =>
                 pokemonUrl(item.url).then((response) => {
                   setPokemonDetail(response);
+                  setOpen(true);
                 })
               }
               key={index}
@@ -24,7 +26,7 @@ const ResultSeacrh = () => {
           );
         })}
       </div>
-      <InfoPokemon data={pokemonDetail} />
+      {open ? <InfoPokemon data={pokemonDetail} /> : ""}
     </div>
   );
 };
