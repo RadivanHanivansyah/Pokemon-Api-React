@@ -8,6 +8,7 @@ export async function pokemonUrl( url ) {
     const pokemonDetail = await axios.get(
         url
     )
+    console.log( pokemonDetail.data )
     return pokemonDetail.data
 }
 
