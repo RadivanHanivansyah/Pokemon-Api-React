@@ -10,11 +10,7 @@ export default function InfoPokemon({ data }) {
       </div>
       <div className="detail-info border w-full mb-2 bg-slate-100 rounded-xl border-black">
         <div className="image flex justify-center items-center py-4 lg:py-7">
-          <img
-            className="w-1/4 lg:w-1/3"
-            src={data.sprites.front_default}
-            alt=""
-          />
+          <img className="w-1/4" src={data.sprites.front_default} alt="" />
         </div>
         <div className="size rounded-xl flex w-full justify-center gap-3 capitalize bg-slate-200 py-1">
           <h3>height: {data.height}</h3>
