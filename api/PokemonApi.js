@@ -11,7 +11,12 @@ export async function pokemonUrl( url ) {
     console.log( pokemonDetail.data )
     return pokemonDetail.data
 }
-
+export async function searchPokemon( { name } ) {
+    const result = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${ name }`
+    )
+    return result.data
+}
 
 export const hasil = pokemonApi.data.results;
 

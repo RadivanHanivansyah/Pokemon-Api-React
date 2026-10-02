@@ -1,6 +1,6 @@
 export default function InfoPokemon({ data }) {
   return (
-    <div className="border-4 rounded-xl  px-3 py-2 border-yellow-400 h-full">
+    <div className="border-4 lg:-mt-5 rounded-xl  px-3 py-2 border-yellow-400 h-full">
       <div className="info-pokemon mb-2 font-semibold tex-black flex justify-between items-center">
         <h1 className="text-xl">{data.name}</h1>
         <h2 className="hp font-semibold text-lg">
@@ -18,7 +18,18 @@ export default function InfoPokemon({ data }) {
         </div>
       </div>
       <div className="type">
-        <h3>{data.types[0].type.name}</h3>
+        <h3 className="border bg-slate-200 rounded-2xl font-medium w-1/4 text-center py-1 px-2">
+          {data.types[0].type.name}
+        </h3>
+      </div>
+      <div className="abilty py-2 lg:pb-3 lg:pt-3.5">
+        {data.abilities.slice(0, 2).map((item, index) => {
+          return (
+            <h3 className="text-lg" key={index}>
+              {item.ability.name}
+            </h3>
+          );
+        })}
       </div>
     </div>
   );
