@@ -15,7 +15,6 @@ const ResultSeacrh = ({ setPokemonDetail, setOpen, isTrueName, name }) => {
             onClick={() => {
               searchPokemon({ name }).then((response) => {
                 setPokemonDetail(response);
-                console.log(response);
                 setOpen(true);
               });
             }}
